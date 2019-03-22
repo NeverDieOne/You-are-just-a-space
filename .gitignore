@@ -1,0 +1,11 @@
+.env
+blacklist.txt
+comments.txt
+followed.txt
+friends.txt
+instabot.log
+skipped.txt
+unfollowed.txt
+whitelist.txt
+images/*
+.gitattributes
