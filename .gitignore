@@ -10,3 +10,4 @@ whitelist.txt
 images/*
 .gitattributes
 __pycache__/*
+.idea/*
