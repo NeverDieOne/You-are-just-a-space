@@ -9,3 +9,4 @@ unfollowed.txt
 whitelist.txt
 images/*
 .gitattributes
+__pycache__/*
