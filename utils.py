@@ -2,7 +2,7 @@ import requests
 import os
 
 
-def get_extansion_of_image(url):
+def get_extension_of_image(url):
     return url.split('.')[-1]
 
 
