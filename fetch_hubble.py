@@ -9,7 +9,7 @@ def save_hubble_pic_by_id(image_id):
     response = requests.get(url)
     url_for_save = response.json()['image_files'][-1]['file_url']
     extension_of_image = utils.get_extension_of_image(url_for_save)
-    path = f'hubble{image_id}.{extansion_of_image}'
+    path = f'hubble{image_id}.{extension_of_image}'
     utils.save_picture(url_for_save, path)
 
 
