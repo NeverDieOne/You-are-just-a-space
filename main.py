@@ -12,24 +12,26 @@ parser.add_argument('-hi', '--hubble_id', help='ID картинки для ск�
 parser.add_argument('-hc', '--hubble_collection', help='Имя коллекции для скачивания с API Hubble')
 parser.add_argument('-i', '--inst', action='store_true', help='Постит картинки в Instagram')
 
-args = parser.parse_args()
 
-if args.space:
-  fetch_spacex_last_launch()
+if __name__ == '__main__':
+	args = parser.parse_args()
 
-if args.hubble_id:
-  save_hubble_pic_by_id(args.hubble_id)
+	if args.space:
+	  fetch_spacex_last_launch()
 
-if args.hubble_collection:
-  save_hubble_pic_collection(args.hubble_collection)
+	if args.hubble_id:
+	  save_hubble_pic_by_id(args.hubble_id)
 
-if args.inst:
-  bot = Bot()
-  bot.login(username=os.getenv('LOGIN'), password=os.getenv('PASSWORD'))
+	if args.hubble_collection:
+	  save_hubble_pic_collection(args.hubble_collection)
 
-  for pic in os.listdir('images'):
-      bot.upload_photo(f'images/{pic}')
+	if args.inst:
+	  bot = Bot()
+	  bot.login(username=os.getenv('LOGIN'), password=os.getenv('PASSWORD'))
 
-else:
-  print('Error\nВведите хотя бы 1 аргумент')
+	  for pic in os.listdir('images'):
+	      bot.upload_photo(f'images/{pic}')
+
+	else:
+	  print('Error\nВведите хотя бы 1 аргумент')
     
