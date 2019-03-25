@@ -30,7 +30,7 @@ if __name__ == '__main__':
         bot.login(username=os.getenv('LOGIN'), password=os.getenv('PASSWORD'))
 
         for pic in os.listdir('images'):
-        bot.upload_photo(f'images/{pic}')
+            bot.upload_photo(f'images/{pic}')
 
     else:
         print('Error\nВведите хотя бы 1 аргумент')
