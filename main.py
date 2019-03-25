@@ -14,24 +14,24 @@ parser.add_argument('-i', '--inst', action='store_true', help='Постит ка
 
 
 if __name__ == '__main__':
-	args = parser.parse_args()
+    args = parser.parse_args()
 
-	if args.space:
-	  fetch_spacex_last_launch()
+    if args.space:
+    	fetch_spacex_last_launch()
 
-	if args.hubble_id:
-	  save_hubble_pic_by_id(args.hubble_id)
+    if args.hubble_id:
+        save_hubble_pic_by_id(args.hubble_id)
 
-	if args.hubble_collection:
-	  save_hubble_pic_collection(args.hubble_collection)
+    if args.hubble_collection:
+        save_hubble_pic_collection(args.hubble_collection)
 
-	if args.inst:
-	  bot = Bot()
-	  bot.login(username=os.getenv('LOGIN'), password=os.getenv('PASSWORD'))
+    if args.inst:
+        bot = Bot()
+        bot.login(username=os.getenv('LOGIN'), password=os.getenv('PASSWORD'))
 
-	  for pic in os.listdir('images'):
-	      bot.upload_photo(f'images/{pic}')
+        for pic in os.listdir('images'):
+        bot.upload_photo(f'images/{pic}')
 
-	else:
-	  print('Error\nВведите хотя бы 1 аргумент')
+    else:
+        print('Error\nВведите хотя бы 1 аргумент')
     
